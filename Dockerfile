@@ -8,4 +8,4 @@ COPY run.py .
 RUN make install
 
 COPY ./app ./app 
-CMD ["python", "./run.py"]
+CMD gunicorn run:app --bind 0.0.0.0:$PORT
